@@ -21,7 +21,7 @@ requirements:
 
 test:
   requires:
-    - pkg-config
+    - pkg-config  # [unix]
   commands:
     - pkg-config --modversion {{ name }}  # [unix]
     - test -f $PREFIX/include/urdf_model/model.h  # [unix]
