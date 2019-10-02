@@ -10,21 +10,23 @@ source:
   sha256: 2b3040a5f4d1e421b32d80540dd1d09fa0ef46c1d4152210ca8753c462b90e31
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - make
+    - make  # [unix]
 
 test:
   requires:
     - pkg-config
   commands:
-    - pkg-config --modversion {{ name }}
-    - test -f $PREFIX/include/urdf_model/model.h
+    - pkg-config --modversion {{ name }}  # [unix]
+    - test -f $PREFIX/include/urdf_model/model.h  # [unix]
+
+    - if exist %PREFIX%\\Library\\CMake\\urdfdom_headers-config.cmake (exit 0) else (exit 1)  # [win]
 
 about:
   home: http://github.com/ros/{{ name }}
