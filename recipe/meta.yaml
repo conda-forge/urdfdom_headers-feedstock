@@ -9,10 +9,10 @@ source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 2b3040a5f4d1e421b32d80540dd1d09fa0ef46c1d4152210ca8753c462b90e31
   patches:
-    - relocatable-fix.patch
+    - relocatable-fix.patch  # [win]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
 
 requirements:
