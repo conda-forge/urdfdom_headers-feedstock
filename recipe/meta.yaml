@@ -1,5 +1,5 @@
 {% set name = "urdfdom_headers" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 2b3040a5f4d1e421b32d80540dd1d09fa0ef46c1d4152210ca8753c462b90e31
-  patches:
-    - relocatable-fix.patch  # [win]
+  sha256: 76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -35,7 +33,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Headers for URDF parsers'
+  summary: Headers for URDF parsers
   dev_url: https://github.com/ros/{{ name }}
 
 extra:
