@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac
-  patches:
-    - relocatable-fix.patch  # [win]
 
 build:
   number: 0
