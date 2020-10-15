@@ -1,0 +1,19 @@
+diff --git a/urdf_sensor/include/urdf_sensor/sensor.h b/urdf_sensor/include/urdf_sensor/sensor.h
+index 60126aa..681b262 100644
+--- a/urdf_sensor/include/urdf_sensor/sensor.h
++++ b/urdf_sensor/include/urdf_sensor/sensor.h
+@@ -70,6 +70,14 @@
+ #include "urdf_model/types.h"
+ #include "urdf_sensor/types.h"
+ 
++// MSVC fixes
++#ifdef far
++#undef far
++#endif
++#ifdef near
++#undef near
++#endif
++
+ namespace urdf{
+ 
+ class VisualSensor
