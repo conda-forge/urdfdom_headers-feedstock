@@ -10,6 +10,7 @@ source:
   sha256: 1acd50b976f642de9dc0fde532eb8d77ea09f4de12ebfbd9d88b0cd2891278fd
   patches:
     - msvc_include.patch  # [win]
+    - 72.patch
 
 build:
   number: 0
@@ -23,9 +24,11 @@ requirements:
 
 test:
   requires:
-    - pkg-config  # [unix]
+    - pkg-config
   commands:
-    - pkg-config --modversion {{ name }}  # [unix]
+    - pkg-config --modversion {{ name }}
+    - pkg-config --exists --print-errors --debug {{ name }}
+    - pkg-config --validate --print-errors --debug {{ name }}
     - test -f $PREFIX/include/urdfdom_headers/urdf_model/model.h  # [unix]
 
     - if exist %PREFIX%\\Library\\CMake\\urdfdom_headers-config.cmake (exit 0) else (exit 1)  # [win]
