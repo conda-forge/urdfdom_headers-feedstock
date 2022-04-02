@@ -26,7 +26,7 @@ test:
     - pkg-config  # [unix]
   commands:
     - pkg-config --modversion {{ name }}  # [unix]
-    - test -f $PREFIX/include/urdf_model/model.h  # [unix]
+    - test -f $PREFIX/include/urdfdom_headers/urdf_model/model.h  # [unix]
 
     - if exist %PREFIX%\\Library\\CMake\\urdfdom_headers-config.cmake (exit 0) else (exit 1)  # [win]
 
@@ -43,3 +43,4 @@ extra:
     - jcarpent
     - wolfv
     - lesteve
+    - traversaro
