@@ -1,5 +1,5 @@
 {% set name = "urdfdom_headers" %}
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 76a68657c38e54bb45bddc4bd7d823a3b04edcd08064a56d8e7d46b9912035ac
+  sha256: 1acd50b976f642de9dc0fde532eb8d77ea09f4de12ebfbd9d88b0cd2891278fd
   patches:
     - msvc_include.patch  # [win]
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
@@ -26,7 +26,7 @@ test:
     - pkg-config  # [unix]
   commands:
     - pkg-config --modversion {{ name }}  # [unix]
-    - test -f $PREFIX/include/urdf_model/model.h  # [unix]
+    - test -f $PREFIX/include/urdfdom_headers/urdf_model/model.h  # [unix]
 
     - if exist %PREFIX%\\Library\\CMake\\urdfdom_headers-config.cmake (exit 0) else (exit 1)  # [win]
 
@@ -43,3 +43,4 @@ extra:
     - jcarpent
     - wolfv
     - lesteve
+    - traversaro
