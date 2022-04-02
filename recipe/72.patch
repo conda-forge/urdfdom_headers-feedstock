@@ -1,0 +1,30 @@
+From 038202a2f669c83386aaed5a19d28b31e5f2efec Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio.traversaro@iit.it>
+Date: Sat, 2 Apr 2022 16:21:24 +0200
+Subject: [PATCH] Install pkg-config .pc file also on Windows/MSVC
+
+---
+ CMakeLists.txt | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 89d52ed..03007fc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,12 +54,10 @@ install(FILES
+   DESTINATION ${CMAKE_CONFIG_INSTALL_DIR} COMPONENT cmake)
+ 
+ # Make the package config file
+-if (NOT MSVC)
+-  set(PACKAGE_DESC "Unified Robot Description Format")
+-  set(pkg_conf_file "urdfdom_headers.pc")
+-  configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/pkgconfig/${pkg_conf_file}.in" "${CMAKE_BINARY_DIR}/${pkg_conf_file}" @ONLY)
+-  install(FILES "${CMAKE_BINARY_DIR}/${pkg_conf_file}" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig/ COMPONENT pkgconfig)
+-endif()
++set(PACKAGE_DESC "Unified Robot Description Format")
++set(pkg_conf_file "urdfdom_headers.pc")
++configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/pkgconfig/${pkg_conf_file}.in" "${CMAKE_BINARY_DIR}/${pkg_conf_file}" @ONLY)
++install(FILES "${CMAKE_BINARY_DIR}/${pkg_conf_file}" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig/ COMPONENT pkgconfig)
+ 
+ add_library(${PROJECT_NAME} INTERFACE)
+ target_include_directories(${PROJECT_NAME} INTERFACE
