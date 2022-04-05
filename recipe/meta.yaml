@@ -13,7 +13,7 @@ source:
     - 72.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
 
 requirements:
@@ -29,7 +29,7 @@ test:
     - pkg-config --modversion {{ name }}
     - pkg-config --exists --print-errors --debug {{ name }}
     - pkg-config --validate --print-errors --debug {{ name }}
-    - test -f $PREFIX/include/urdfdom_headers/urdf_model/model.h  # [unix]
+    - test -f $PREFIX/include/urdf_model/model.h  # [unix]
 
     - if exist %PREFIX%\\Library\\CMake\\urdfdom_headers-config.cmake (exit 0) else (exit 1)  # [win]
 
