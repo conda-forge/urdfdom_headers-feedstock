@@ -1,5 +1,5 @@
 {% set name = "urdfdom_headers" %}
-{% set version = "1.0.6" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1acd50b976f642de9dc0fde532eb8d77ea09f4de12ebfbd9d88b0cd2891278fd
+  sha256: 01b91c2f7cb42b0033cbdf559684a60001f9927e5d0a5a3682a344cc354f1d39
   patches:
     - msvc_include.patch  # [win]
     - 72.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win and vc<14]
 
 requirements:
