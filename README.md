@@ -15,14 +15,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/urdfdom_headers-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/urdfdom_headers-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -90,7 +83,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-urdfdom_headers-green.svg)](https://anaconda.org/conda-forge/urdfdom_headers) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/urdfdom_headers.svg)](https://anaconda.org/conda-forge/urdfdom_headers) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/urdfdom_headers.svg)](https://anaconda.org/conda-forge/urdfdom_headers) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/urdfdom_headers.svg)](https://anaconda.org/conda-forge/urdfdom_headers) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-urdfdom__headers-green.svg)](https://anaconda.org/conda-forge/urdfdom_headers) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/urdfdom_headers.svg)](https://anaconda.org/conda-forge/urdfdom_headers) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/urdfdom_headers.svg)](https://anaconda.org/conda-forge/urdfdom_headers) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/urdfdom_headers.svg)](https://anaconda.org/conda-forge/urdfdom_headers) |
 
 Installing urdfdom_headers
 ==========================
