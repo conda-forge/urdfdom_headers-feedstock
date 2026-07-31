@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/ros/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 42d85a82d1dea2e1252596131e58997244ce6c59d12ae9ab852fe7c35d09f0ec
-  patches:
-    - msvc_include.patch  # [win]
 
 build:
   number: 0
