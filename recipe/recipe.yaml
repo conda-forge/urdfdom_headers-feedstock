@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: urdfdom_headers
+  version: "3.0.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/ros/${{ name }}/archive/${{ version }}.tar.gz
+  sha256: 42d85a82d1dea2e1252596131e58997244ce6c59d12ae9ab852fe7c35d09f0ec
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - cmake
+    - if: unix
+      then: make
+
+tests:
+  - requirements:
+      run:
+        - pkg-config
+    script:
+      - pkg-config --modversion ${{ name }}
+      - pkg-config --exists --print-errors --debug ${{ name }}
+      - pkg-config --validate --print-errors --debug ${{ name }}
+      - if: unix
+        then: test -f $PREFIX/include/urdf_model/model.h
+      - if: win
+        then: if exist %PREFIX%\\Library\\CMake\\urdfdom_headers-config.cmake (exit 0) else (exit 1)
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Headers for URDF parsers
+  homepage: http://github.com/ros/${{ name }}
+  repository: https://github.com/ros/${{ name }}
+
+extra:
+  recipe-maintainers:
+    - jcarpent
+    - wolfv
+    - traversaro
